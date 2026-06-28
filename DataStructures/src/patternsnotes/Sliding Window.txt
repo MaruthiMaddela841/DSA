@@ -1,0 +1,196 @@
+========================================
+PATTERN #5 : Sliding Window
+========================================
+
+Recognition Keywords:
+- Longest
+- Shortest
+- Maximum
+- Minimum
+- Subarray
+- Substring
+- Consecutive
+- Contiguous
+- Window
+- At most K
+- At least K
+- Exactly K
+
+When NOT to Use:
+- Reverse problems
+- Merge two arrays
+- Binary Search problems
+- Non-contiguous selections
+- Problems requiring all combinations
+
+Mental Trigger:
+"Can I solve this by maintaining a CONTIGUOUS window
+instead of checking every possible subarray/substring?"
+
+Main Idea:
+Maintain a window using two pointers.
+
+Expand the window by moving the right pointer.
+
+If the window becomes invalid,
+shrink it by moving the left pointer.
+
+Repeat until the end.
+
+Visualization:
+
+Initial
+
+L
+R
+↓
+
+A B C D E
+
+Expand
+
+L
+    R
+↓
+
+A B C D E
+
+Window becomes invalid
+
+↓
+
+Shrink
+
+    L
+    R
+↓
+
+A B C D E
+
+Expand again...
+
+Pointers:
+left  -> Start of window
+
+right -> End of window
+
+Algorithm:
+1. Initialize left = 0
+2. Expand window by moving right
+3. Update window information
+4. If window becomes invalid:
+       Move left until valid
+5. Update answer whenever required
+
+Loop Invariant:
+The window [left...right]
+always satisfies the problem's condition.
+
+Time Complexity:
+Usually O(n)
+
+Reason:
+Each pointer moves at most n times.
+
+Space Complexity:
+Usually O(1)
+or O(k) if using HashMap/HashSet.
+
+Common Mistakes:
+- Forgetting to shrink the window
+- Shrinking too early
+- Updating answer before window becomes valid
+- Confusing substring with subsequence
+- Moving both pointers unnecessarily
+
+Common LeetCode Problems:
+✓ Maximum Sum Subarray of Size K
+✓ Longest Substring Without Repeating Characters
+✓ Longest Repeating Character Replacement
+✓ Minimum Size Subarray Sum
+✓ Permutation in String
+✓ Minimum Window Substring
+
+Interview Tips:
+Whenever you see
+
+Longest
+Shortest
+Substring
+Subarray
+Contiguous
+
+Immediately ask yourself:
+
+"Can Sliding Window solve this?"
+
+Why NOT Other Patterns?
+
+Not Keep & Write:
+Nothing is being removed or filtered.
+
+Not Two Pointers (Opposite Ends):
+Pointers move in the SAME direction,
+not toward each other.
+
+Not Running Minimum:
+We are maintaining a VALID WINDOW,
+not remembering the best value so far.
+
+Not Merge Pattern:
+There aren't two sorted collections.
+
+Pattern Signature:
+
+Expand
+
+↓
+
+Check validity
+
+↓
+
+Shrink if needed
+
+↓
+
+Update answer
+
+↓
+
+Repeat
+
+
+Question says...
+
+Longest Substring
+------------------------
+Sliding Window
+
+Shortest Subarray
+------------------------
+Sliding Window
+
+Maximum Sum of K Consecutive Elements
+------------------------
+Sliding Window
+
+Minimum Length Subarray
+------------------------
+Sliding Window
+
+At most K Distinct
+------------------------
+Sliding Window
+
+Exactly K Distinct
+------------------------
+Sliding Window
+
+Consecutive Elements
+------------------------
+Sliding Window
+
+Contiguous Elements
+------------------------
+Sliding Window
