@@ -1,0 +1,99 @@
+========================================
+PATTERN RECOGNITION CHEAT SHEET
+========================================
+
+Question says...
+
+Remove
+Keep
+Move
+Filter
+Compact
+-------------------------
+→ Keep & Write
+
+
+Reverse
+Palindrome
+Beginning & End
+Mirror
+-------------------------
+→ Two Pointers
+
+
+Maximum Profit
+Minimum Cost
+Best Time
+Largest Difference
+Maximum Gain
+-------------------------
+→ Running Minimum / Maximum
+
+
+Longest
+Shortest
+Subarray
+Substring
+Contiguous
+Window
+-------------------------
+→ Sliding Window
+
+
+Duplicate
+Frequency
+Count
+Already Seen
+Unique
+-------------------------
+→ HashMap / HashSet
+
+
+Sorted
+Search
+Find Position
+First
+Last
+Middle
+-------------------------
+→ Binary Search
+
+
+Parentheses
+Undo
+Backspace
+Previous Greater
+Previous Smaller
+-------------------------
+→ Stack
+
+
+Level Order
+Shortest Path
+Nearest
+Minimum Steps
+-------------------------
+→ Queue / BFS
+
+
+Top K
+Largest K
+Smallest K
+Priority
+-------------------------
+→ Heap
+
+
+Generate All
+Permutations
+Combinations
+Try Every Possibility
+-------------------------
+→ Backtracking
+
+
+Maximum Ways
+Minimum Cost
+Repeated Subproblems
+-------------------------
+→ Dynamic Programming

@@ -1,0 +1,82 @@
+========================================
+PATTERN #1 : Keep & Write (Filter Pattern)
+========================================
+
+Recognition Keywords:
+- Remove Element
+- Remove Duplicates
+- Move Zeroes
+- Keep only
+- Remove all occurrences
+- Compact array
+- Filter elements
+- In-place modification
+
+When NOT to Use:
+- Reversing arrays
+- Palindrome problems
+- Longest/Shortest Subarray or Substring
+- Problems requiring nested comparisons
+
+Main Idea:
+Scan the array once using a Read Pointer.
+Whenever an element should be kept,
+write it at the Write Pointer.
+Ignore unwanted elements.
+
+Visualization:
+
+Original:
+[3,2,2,3,4]
+
+Read Pointer ----->
+
+Keep?
+YES -> Write at k -> k++
+NO  -> Skip
+
+Result:
+[2,2,4,_,_]
+
+Pointers / Variables:
+- i (Read Pointer)
+- k (Write Pointer)
+
+Algorithm:
+1. Initialize k.
+2. Scan every element using i.
+3. Check whether the element should be kept.
+4. If yes:
+      nums[k] = nums[i]
+      k++
+5. Return k.
+
+Loop Invariant:
+The first k elements always contain
+exactly the elements that should be kept.
+
+Time Complexity:
+O(n)
+
+Space Complexity:
+O(1)
+
+Common Mistakes:
+- Incrementing k even when skipping.
+- Wrong condition (== instead of !=).
+- Wrong initialization of k.
+- Off-by-one loop errors.
+- Overwriting before reading.
+
+Common LeetCode Problems:
+✓ Remove Element
+✓ Remove Duplicates from Sorted Array
+✓ Move Zeroes
+✓ Remove Duplicates II
+
+Interview Tips:
+Always ask:
+"What elements do I want to KEEP?"
+
+Don't think about removing.
+Think about filtering.

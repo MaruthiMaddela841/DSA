@@ -1,0 +1,69 @@
+========================================
+PATTERN #3 : Running Minimum / Maximum
+========================================
+
+Recognition Keywords:
+- Maximum Profit
+- Minimum Cost
+- Best Time
+- Largest Difference
+- Maximum Gain
+- Highest Benefit
+- Buy first, Sell later
+- Best value seen so far
+
+When NOT to Use:
+- Problems requiring all combinations.
+- Contiguous subarray/substring problems (Sliding Window).
+- Problems needing sorting or binary search.
+
+Main Idea:
+Scan the array once while maintaining the best (minimum or maximum)
+value seen so far. At each step, use the current element together with
+that best value to update the answer.
+
+Visualization:
+
+Prices:
+7  1  5  3  6  4
+   ↑
+Current Minimum
+
+Current Price → Calculate Profit → Update Answer
+
+Pointers / Variables:
+- minSoFar
+- currentValue
+- answer (maxProfit)
+
+Algorithm:
+1. Initialize minSoFar with the first element.
+2. Traverse from left to right.
+3. Update minSoFar if a smaller value is found.
+4. Compute the result using the current value.
+5. Update the overall answer.
+
+Loop Invariant:
+Before processing index i,
+minSoFar contains the minimum value from indices 0...i.
+
+Time Complexity:
+O(n)
+
+Space Complexity:
+O(1)
+
+Common Mistakes:
+- Off-by-one loop errors.
+- Initializing minSoFar incorrectly.
+- Updating profit before maintaining minSoFar.
+- Returning today's profit instead of the maximum profit.
+
+Common LeetCode Problems:
+- Best Time to Buy and Sell Stock
+- Maximum Difference Between Increasing Elements
+- Similar "maximum gain" problems
+
+Interview Tips:
+Ask yourself:
+"What is the best value I've seen so far that can help me make the best decision today?"
