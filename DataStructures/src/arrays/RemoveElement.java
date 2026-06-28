@@ -1,5 +1,6 @@
 package arrays;
 
+// https://leetcode.com/problems/remove-element/description/
 public class RemoveElement {
 
 	public static void main(String[] args) {

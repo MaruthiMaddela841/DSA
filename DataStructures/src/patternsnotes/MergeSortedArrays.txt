@@ -1,0 +1,96 @@
+========================================
+PATTERN #4 : Merge Two Sorted Arrays
+========================================
+
+Recognition Keywords:
+- Merge
+- Two sorted arrays
+- Two sorted lists
+- Merge intervals (related idea)
+- In-place merge
+- Sorted input
+
+When NOT to Use:
+- Unsorted arrays
+- Reverse problems
+- Filtering/removing elements
+- Sliding Window problems
+
+Mental Trigger:
+"I have two sorted collections.
+Can I compare the current elements
+and place the correct one?"
+
+Main Idea:
+Compare the largest (or smallest)
+remaining element from both arrays.
+
+Copy the correct element into
+the destination.
+
+Move only the pointer
+whose element was used.
+
+Visualization:
+
+nums1
+
+1 2 3 _ _ _
+      ↑     ↑
+      i     k
+
+nums2
+
+2 5 6
+      ↑
+      j
+
+Compare
+
+↓
+
+Take Larger
+
+↓
+
+Copy
+
+↓
+
+Move pointers
+
+Pointers:
+i → nums1 reader
+
+j → nums2 reader
+
+k → destination writer
+
+Loop Invariant:
+Everything after k
+is already completely sorted.
+
+Time Complexity:
+O(m+n)
+
+Space Complexity:
+O(1)
+
+Common Mistakes:
+- Using nums1.length-1 instead of m-1
+- Swapping instead of copying
+- Filling from the front
+- Forgetting remaining nums2 elements
+- Moving the wrong pointer
+
+Common Problems:
+✓ Merge Sorted Array
+✓ Merge Sort (merge step)
+✓ Merge Two Sorted Lists
+✓ Merge Intervals (conceptually similar)
+
+Interview Tip:
+Whenever the input is already sorted,
+don't destroy that advantage.
+
+Use it.
