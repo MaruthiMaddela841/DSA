@@ -1,0 +1,66 @@
+========================================
+Loop Invariant
+========================================
+
+Definition:
+
+A condition that is ALWAYS true
+after every iteration of the loop.
+
+Think:
+
+"If I pause the algorithm right now,
+what must be true?"
+
+----------------------------------------
+
+Keep & Write
+
+First k elements contain
+only the kept elements.
+
+----------------------------------------
+
+Reverse String
+
+Everything outside left and right
+is already reversed.
+
+----------------------------------------
+
+Running Minimum
+
+minValue is the smallest value
+seen so far.
+
+----------------------------------------
+
+Running Maximum
+
+maxValue is the best answer
+seen so far.
+
+----------------------------------------
+
+Merge Sorted Arrays
+
+Everything after k
+is already correctly merged.
+
+----------------------------------------
+
+Fixed Sliding Window
+
+sum equals the sum
+of the current window.
+
+----------------------------------------
+
+Variable Sliding Window
+
+Current window is valid.
+
+HashSet contains exactly the
+characters inside the window.
+
+No duplicates exist.

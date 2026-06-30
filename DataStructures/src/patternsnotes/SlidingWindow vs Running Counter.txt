@@ -1,0 +1,30 @@
+========================================
+Sliding Window vs Running Counter
+========================================
+
+Sliding Window
+
+Need:
+- left pointer
+- right pointer
+
+Window can become INVALID.
+
+Fix by moving left pointer.
+
+----------------------------------------
+
+Running Counter
+
+Need:
+- current count
+- best answer
+
+No left pointer.
+
+When condition breaks,
+reset the counter.
+
+Examples:
+✓ Max Consecutive Ones
+✓ Longest streak problems

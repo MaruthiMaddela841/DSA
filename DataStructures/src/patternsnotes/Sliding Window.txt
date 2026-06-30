@@ -194,3 +194,130 @@ Sliding Window
 Contiguous Elements
 ------------------------
 Sliding Window
+
+
+========================================
+Fixed Size Sliding Window
+========================================
+
+Window size never changes.
+
+Every iteration:
+
+1. Remove ONE element.
+2. Add ONE element.
+3. Update answer.
+
+Think:
+
+Old Window
+
+↓
+
+Remove left
+
+↓
+
+Add right
+
+↓
+
+New Window
+
+========================================
+Variable Sliding Window
+========================================
+
+Recognition Keywords:
+- Longest substring
+- Shortest substring
+- At most K
+- At least K
+- Exactly K
+- Distinct characters
+- No repeating characters
+
+Mental Trigger:
+
+Can the window become INVALID?
+
+If YES
+
+↓
+
+Can I restore it by moving the left pointer?
+
+If YES
+
+↓
+
+Variable Sliding Window
+
+----------------------------------------
+
+Algorithm
+
+1. Expand window
+
+2. Window invalid?
+
+3. While invalid:
+      Shrink window
+
+4. Update answer
+
+5. Repeat
+
+----------------------------------------
+
+Window Invariant
+
+Window is ALWAYS valid
+before moving to next iteration.
+
+----------------------------------------
+
+Common Data Structures
+
+HashSet
+
+Need:
+"Have I seen this?"
+
+----------------------------
+
+HashMap
+
+Need:
+"How many times have I seen this?"
+
+----------------------------------------
+
+Time Complexity
+
+O(n)
+
+Reason
+
+Left moves at most n times.
+
+Right moves at most n times.
+
+Total ≤ 2n
+
+Still O(n).
+
+----------------------------------------
+
+Interview Tip
+
+Don't ask
+
+"How do I remove?"
+
+Ask
+
+"What makes my window invalid?"
+
+Then remove until
+that condition disappears.
