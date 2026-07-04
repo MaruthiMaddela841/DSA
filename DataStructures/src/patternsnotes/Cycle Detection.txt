@@ -1,0 +1,74 @@
+========================================
+PATTERN #5 : Cycle Detection
+========================================
+
+Recognition Keywords
+
+Cycle
+Loop
+Circular Linked List
+Repeated Node
+
+----------------------------------------
+
+Why this pattern?
+
+Need to detect whether
+a linked list contains a cycle.
+
+----------------------------------------
+
+Pointers
+
+slow (+1)
+
+fast (+2)
+
+----------------------------------------
+
+Loop Invariant
+
+Fast moves twice as fast
+as slow.
+
+If a cycle exists,
+the distance between them
+inside the cycle changes by
+one node every iteration,
+so they must eventually meet.
+
+----------------------------------------
+
+Stop Conditions
+
+slow == fast
+→ Cycle exists
+
+fast == null
+or
+fast.next == null
+→ No cycle
+
+----------------------------------------
+
+Time Complexity
+
+O(n)
+
+----------------------------------------
+
+Space Complexity
+
+O(1)
+
+----------------------------------------
+
+Common Mistakes
+
+❌ Compare values instead of nodes
+
+❌ Forget fast != null
+
+❌ Move fast only one step
+
+❌ Start comparing before moving

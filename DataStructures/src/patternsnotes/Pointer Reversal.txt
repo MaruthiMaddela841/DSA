@@ -1,0 +1,81 @@
+========================================
+PATTERN #4 : Pointer Reversal
+========================================
+
+Recognition Keywords
+
+Reverse Linked List
+Reverse Between
+Reverse K Group
+Palindrome Linked List
+
+----------------------------------------
+
+Why this pattern?
+
+Need to reverse links without
+losing access to the remaining list.
+
+----------------------------------------
+
+Pointers
+
+prev     -> Already reversed list
+
+current  -> Node currently processing
+
+next     -> Remaining unreversed list
+
+----------------------------------------
+
+Loop Invariant
+
+Everything before current
+is already reversed.
+
+Everything from current onward
+is still unreversed.
+
+----------------------------------------
+
+Algorithm
+
+1. Save next
+
+2. Reverse current.next
+
+3. Move prev
+
+4. Move current
+
+Repeat until current == null.
+
+Return prev.
+
+----------------------------------------
+
+Time Complexity
+
+O(n)
+
+----------------------------------------
+
+Space Complexity
+
+O(1)
+
+----------------------------------------
+
+Common Mistakes
+
+❌ Forget to save next
+
+❌ Return current
+
+❌ Initialize prev = head
+
+❌ Loop on current.next
+
+❌ Lose remaining list
+
+❌ Create a cycle

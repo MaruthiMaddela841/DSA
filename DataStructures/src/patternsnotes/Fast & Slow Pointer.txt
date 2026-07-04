@@ -1,0 +1,161 @@
+========================================
+PATTERN #3 : Fast & Slow Pointer
+========================================
+
+Recognition Keywords
+
+Middle
+Cycle
+Palindrome
+Nth from End
+
+----------------------------------------
+
+Idea
+
+Move one pointer slowly.
+
+Move another pointer twice as fast.
+
+When the fast pointer reaches the end,
+
+the slow pointer is at the middle.
+
+----------------------------------------
+
+Pointers
+
+slow (+1)
+
+fast (+2)
+
+----------------------------------------
+
+Loop Invariant
+
+Fast has traveled twice the
+distance of slow.
+
+----------------------------------------
+
+Time Complexity
+
+O(n)
+
+----------------------------------------
+
+Space Complexity
+
+O(1)
+
+----------------------------------------
+
+Common Mistakes
+
+Using wrong loop condition.
+
+Moving fast only once.
+
+Not checking fast.next for null.
+
+
+
+Fast & Slow Pointer
+
+Loop Condition:
+
+while(fast != null && fast.next != null)
+
+↓
+
+Returns SECOND middle node.
+
+----------------------------
+
+while(fast.next != null && fast.next.next != null)
+
+↓
+
+Returns FIRST middle node.
+
+
+
+
+------------------------------
+========================================
+PATTERN #3 : Fast & Slow Pointer
+========================================
+
+Recognition Keywords
+
+Middle
+Cycle
+Palindrome
+Nth from End
+
+----------------------------------------
+
+Why this pattern?
+
+Need two pointers
+moving at different speeds.
+
+----------------------------------------
+
+Pointers
+
+slow -> +1
+
+fast -> +2
+
+----------------------------------------
+
+Loop Invariant
+
+After every iteration,
+
+fast has traveled
+twice the distance
+of slow.
+
+----------------------------------------
+
+Loop Conditions
+
+while(fast != null && fast.next != null)
+
+↓
+
+Returns SECOND middle.
+
+----------------------------
+
+while(fast.next != null && fast.next.next != null)
+
+↓
+
+Returns FIRST middle.
+
+----------------------------------------
+
+Time Complexity
+
+O(n)
+
+----------------------------------------
+
+Space Complexity
+
+O(1)
+
+----------------------------------------
+
+Common Mistakes
+
+Wrong loop condition
+
+Moving fast once
+
+NullPointerException
+
+Returning fast instead of slow
