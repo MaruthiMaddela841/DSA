@@ -1,0 +1,59 @@
+==================================================
+PATTERN UPDATE : L2 - Delete Node
+==================================================
+
+Recognition:
+- Remove nodes by value
+- Delete one or more nodes
+- Head may also be deleted
+
+Technique:
+Dummy Node (Sentinel)
+
+Core Idea:
+Use two pointers:
+- track : last node that is kept
+- start : current node being examined
+
+Pointer Movement Rule:
+If current node is deleted:
+    - track stays
+    - start moves
+
+If current node is kept:
+    - track moves
+    - start moves
+
+Loop Invariant:
+Everything before 'track' has already been processed and contains only valid (kept) nodes.
+'start' always points to the current node being examined.
+
+Algorithm:
+1. Create a dummy node before head.
+2. Set track = dummy, start = head.
+3. Traverse the list.
+4. If start should be deleted:
+      track.next = start.next
+      start = track.next
+5. Otherwise:
+      track = track.next
+      start = start.next
+6. Return dummy.next.
+
+Time Complexity:
+O(n)
+
+Space Complexity:
+O(1)
+
+Common Mistakes:
+- Moving track after deleting a node.
+- Forgetting the dummy node when the head may be removed.
+- Returning track instead of dummy.next.
+
+Problems Using This Pattern:
+✅ Remove Linked List Elements (LeetCode 203)
+
+Memory Trick:
+Keep node → Both move.
+Delete node → Only current (start) moves.

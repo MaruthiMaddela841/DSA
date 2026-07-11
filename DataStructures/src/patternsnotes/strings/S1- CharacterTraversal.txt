@@ -1,0 +1,32 @@
+==================================================
+PATTERN : S1 - Character Traversal
+==================================================
+
+Recognition:
+- Count characters
+- Find first/last occurrence
+- Ignore spaces
+- Scan from one direction
+
+Core Idea:
+Traverse characters directly.
+Avoid creating unnecessary strings or arrays.
+
+Loop Invariant:
+All characters already skipped are either:
+- trailing spaces, or
+- part of the last word already counted.
+
+Time Complexity:
+O(n)
+
+Space Complexity:
+O(1)
+
+Common Mistakes:
+- Using split() unnecessarily.
+- Forgetting trailing spaces.
+- Forgetting single-word strings.
+
+Memory Trick:
+"Skip spaces → Count letters → Stop."

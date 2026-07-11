@@ -1,0 +1,68 @@
+==================================================
+PATTERN #7 : Two Pointers (Path Equalization)
+==================================================
+
+Recognition:
+- Two linked lists
+- Find intersection
+- O(1) extra space
+- Compare node references
+
+When to Think About This Pattern:
+- Two linked structures
+- Different path lengths
+- Need to synchronize traversal without computing lengths
+
+Core Idea:
+Instead of aligning lengths manually, let each pointer traverse both lists. This automatically equalizes the total distance traveled.
+
+Why It Works:
+Pointer A travels:
+Length(A) + Length(B)
+
+Pointer B travels:
+Length(B) + Length(A)
+
+Both travel the same total distance, so they either meet at the first common node or both become null.
+
+Pointers:
+- pA
+- pB
+
+Loop Invariant:
+After each redirection, both pointers have traveled the same total distance.
+
+Algorithm:
+1. Start pA at headA and pB at headB.
+2. Move both one step.
+3. If pA becomes null, move it to headB.
+4. If pB becomes null, move it to headA.
+5. Stop when pA == pB.
+
+Time Complexity:
+O(m + n)
+
+Space Complexity:
+O(1)
+
+Common Interview Questions:
+- Why does switching heads work?
+- Why compare node references instead of values?
+- What happens if there is no intersection?
+
+Common Mistakes:
+- Comparing values instead of node references.
+- Calculating lengths when not necessary.
+- Assuming lists can intersect more than once.
+
+Problems Using This Pattern:
+✅ Intersection of Two Linked Lists
+
+Interview Tip:
+The invariant is NOT "both pointers switch lists."
+The invariant is:
+"Both pointers eventually travel exactly Length(A) + Length(B)."
+
+Memory Trick:
+"A walks A→B, B walks B→A."
+Same total distance ⇒ Same destination.

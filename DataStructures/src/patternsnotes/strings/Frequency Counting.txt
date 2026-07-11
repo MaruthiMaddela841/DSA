@@ -1,0 +1,50 @@
+==================================================
+PATTERN : Frequency Counting
+==================================================
+
+Recognition:
+- Most frequent
+- Least frequent
+- Count occurrences
+- Duplicate frequency
+- Character counts
+
+Core Idea:
+Count first.
+Analyze later.
+
+Data Structure:
+- int[] for fixed domains (a-z, digits, ASCII)
+- HashMap for unknown/large domains
+
+Algorithm:
+1. Count frequency.
+2. Traverse the frequency table.
+3. Compute the answer.
+
+Loop Invariant:
+After counting:
+freq[i] equals the total occurrences of character i.
+
+Time Complexity:
+Counting : O(n)
+Processing : O(domain)
+
+Examples:
+- Jewels and Stones (optimized lookup)
+- Find Most Frequent Vowel and Consonant
+- Valid Anagram
+- Ransom Note
+- First Unique Character
+
+Recognition Rule:
+Question asks:
+"How many times?"
+
+↓
+
+Frequency Counting
+
+Memory Trick:
+"Count first, think later."
+==================================================

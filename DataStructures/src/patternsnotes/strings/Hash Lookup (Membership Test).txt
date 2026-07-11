@@ -1,0 +1,37 @@
+==================================================
+PATTERN : Hash Lookup (Membership Test)
+==================================================
+
+Recognition:
+- Repeated "Does X exist?"
+- Presence matters.
+- Frequency does NOT matter.
+
+Core Idea:
+Store the lookup collection in a HashSet.
+
+Data Structure:
+HashSet<Character>
+
+Loop Invariant:
+Before processing each query,
+the HashSet already contains every valid lookup element.
+
+Algorithm:
+1. Build HashSet.
+2. Traverse queries.
+3. Count successful lookups.
+
+Time Complexity:
+O(n + m)
+
+Space Complexity:
+O(n)
+
+Common Mistakes:
+- Nested loops.
+- Using HashMap instead of HashSet.
+- Building the HashSet from the wrong collection.
+
+Memory Trick:
+Build once → Lookup many.

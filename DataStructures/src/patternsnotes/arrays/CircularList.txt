@@ -1,0 +1,101 @@
+==================================================
+LINKED LIST TRICK #2 : Circular List Transformation
+==================================================
+
+Recognition:
+- Rotate list
+- Shift nodes
+- Reconnect head and tail
+- Circular traversal problems
+
+Core Idea:
+Instead of rotating repeatedly,
+temporarily make the list circular.
+
+tail.next = head
+
+Now every node can become the head.
+
+Choose the new tail,
+then break the circle.
+
+Pointers:
+- tail
+- newTail
+- newHead
+
+Loop Invariant:
+After creating the circle,
+all nodes remain reachable.
+
+Pointer Changes:
+tail.next = head
+newTail.next = null
+
+Formula:
+effectiveRotation = k % length
+
+newTailIndex = length - effectiveRotation - 1
+
+Time Complexity:
+O(n)
+
+Space Complexity:
+O(1)
+
+Memory Trick:
+Circle → Walk → Break.
+
+
+==============================
+==================================================
+PATTERN UPDATE : L1 Traversal + Circular List Trick
+==================================================
+
+Recognition:
+- Rotate linked list
+- Shift list by k positions
+- Reconnect head and tail
+
+Technique:
+Circular List Transformation
+
+Core Idea:
+Instead of rotating one step at a time:
+1. Find the tail and length.
+2. Connect tail.next = head to form a circle.
+3. Compute effective rotations:
+      rotation = k % length
+4. Find the new tail.
+5. Break the circle.
+
+Pointers:
+- tail
+- newTail
+- newHead
+
+Loop Invariant:
+Before breaking the circle, all nodes remain reachable.
+After each iteration, the traversal pointer moves one step closer to the new tail.
+
+Formula:
+rotation = k % length
+stepsToNewTail = length - rotation - 1
+
+Time Complexity:
+O(n)
+
+Space Complexity:
+O(1)
+
+Common Mistakes:
+- Forgetting k %= length.
+- Rotating one step at a time (O(n*k)).
+- Breaking the list at the wrong node.
+- Forgetting to make the list circular first.
+
+Problems Using This Pattern:
+✅ Rotate List (LeetCode 61)
+
+Memory Trick:
+Circle → Count → Walk → Break.

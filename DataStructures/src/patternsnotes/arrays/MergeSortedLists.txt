@@ -1,0 +1,54 @@
+==================================================
+PATTERN UPDATE : Merge Sorted Lists
+==================================================
+
+Recognition:
+- Two sorted linked lists
+- Merge into one sorted list
+- Compare current nodes of both lists
+
+Primary Pattern:
+Merge Sorted Lists
+
+Implementation Technique:
+Dummy Node + Tail Pointer (Linked List Construction)
+
+Core Idea:
+At each iteration, append the smaller current node to the result.
+
+Pointers:
+- x : current node of list1
+- y : current node of list2
+- tail : last node of merged list
+
+Loop Invariant:
+The merged list from dummy.next to tail is already sorted and contains the smallest processed nodes.
+
+Decision Rule:
+if (x.val <= y.val)
+    choose x
+else
+    choose y
+
+After Choosing:
+1. Append node.
+2. Advance chosen pointer.
+3. Advance tail.
+
+Time Complexity:
+O(m + n)
+
+Space Complexity:
+O(m + n) if creating new nodes.
+O(1) if reusing existing nodes.
+
+Common Mistakes:
+- Using '<' and '>' only, causing an infinite loop on equal values.
+- Forgetting to append the remaining nodes.
+- Returning tail instead of dummy.next.
+
+Problems Using This Pattern:
+✅ Merge Two Sorted Lists (LeetCode 21)
+
+Memory Trick:
+"Compare → Choose → Append → Advance."

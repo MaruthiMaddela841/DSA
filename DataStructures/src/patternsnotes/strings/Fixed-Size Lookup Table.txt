@@ -1,0 +1,48 @@
+==================================================
+PATTERN UPGRADE : Fixed-Size Lookup Table
+==================================================
+
+Recognition:
+- Small fixed character domain.
+- Fast membership lookup.
+- ASCII / English letters / Digits.
+
+Core Idea:
+Use a boolean[] instead of HashSet.
+
+Algorithm:
+1. Mark valid characters.
+2. Traverse the query string.
+3. Lookup directly using character as index.
+
+Example:
+lookup['A'] = true;
+lookup['a'] = true;
+
+Lookup:
+if (lookup[c])
+
+Time Complexity:
+O(n + m)
+
+Space Complexity:
+O(1)
+
+Advantages over HashSet:
+- No hashing.
+- No collisions.
+- Better cache locality.
+- Lower constant factor.
+
+When to Use:
+✓ ASCII
+✓ Digits
+✓ a-z
+✓ A-Z
+
+When NOT to Use:
+✗ Unicode
+✗ Large or unknown domains.
+
+Memory Trick:
+"The character itself is the index."
