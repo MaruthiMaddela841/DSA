@@ -1,0 +1,132 @@
+=========================================
+Pattern: Parentheses Matching with Counter
+=========================================
+
+Recognition:
+- Parentheses
+- Matching pairs
+- Minimum insertions/removals
+- Need count, not positions
+
+Ask Yourself:
+
+Do I need to know WHICH '(' is unmatched?
+→ No
+
+Do I only need to know HOW MANY are unmatched?
+→ Yes
+
+Core Idea:
+
+Maintain:
+
+open = unmatched '(' seen so far
+
+need = insertions required so far
+
+Decision Tree:
+
+Read '('
+
+↓
+
+open++
+
+--------------------------
+
+Read ')'
+
+↓
+
+open > 0 ?
+
+YES
+
+↓
+
+Match one '('
+
+↓
+
+open--
+
+NO
+
+↓
+
+Need one '('
+
+↓
+
+need++
+
+Loop Invariant:
+
+After processing i characters,
+
+open =
+number of unmatched '('
+
+need =
+minimum insertions already required
+to fix processed prefix.
+
+End Condition:
+
+Every unmatched '('
+needs one ')'
+
+Final Answer:
+
+need + open
+
+Complexity:
+
+Time:
+O(n)
+
+Space:
+O(1)
+
+Recognition Clues:
+
+"Minimum insertions"
+
+"Parentheses"
+
+"Matching pairs"
+
+"Need count, not positions"
+
+↓
+
+Think:
+
+Greedy Counter
+
+Common Mistakes:
+
+❌ Using Stack when only the count matters
+
+❌ Forgetting unmatched '(' at the end
+
+❌ Returning only need instead of need + open
+
+Template:
+
+open = 0
+need = 0
+
+for each character:
+
+    if '('
+        open++
+
+    else
+
+        if open > 0
+            open--
+        else
+            need++
+
+return open + need

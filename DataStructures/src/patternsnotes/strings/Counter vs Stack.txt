@@ -1,0 +1,37 @@
+=========================================
+Counter vs Stack
+=========================================
+
+Ask Yourself:
+
+Do I only need to know HOW MANY items are unmatched?
+
+↓
+
+Counter
+
+-----------------------------------------
+
+Do I need to know WHICH item was opened last?
+
+↓
+
+Stack
+
+Reason:
+
+Stack preserves order (LIFO).
+
+Counter only preserves quantity.
+
+Recognition Clues:
+
+Need count only
+↓
+
+Counter
+
+Need latest unmatched element
+↓
+
+Stack

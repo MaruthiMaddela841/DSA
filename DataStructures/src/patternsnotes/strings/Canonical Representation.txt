@@ -1,0 +1,119 @@
+=========================================
+Pattern: S3.3 - Canonical Representation
+=========================================
+
+Recognition:
+- Group equivalent strings
+- Order does NOT matter
+- Frequency defines identity
+- Need fast grouping
+
+Core Idea:
+
+Convert every string into a
+CANONICAL REPRESENTATION.
+
+Strings with the same representation
+belong to the same group.
+
+Canonical Representation Options:
+
+1. Frequency Signature (Preferred)
+
+eat
+↓
+
+#1#0#0#0#1...#1...
+
+2. Sorted String
+
+eat
+↓
+
+aet
+
+Use:
+
+HashMap<Key, List<String>>
+
+Algorithm:
+
+For every string:
+
+1. Build canonical key.
+2. If key exists:
+      Add string to existing group.
+3. Else:
+      Create new group.
+4. Return all groups.
+
+Loop Invariant:
+
+After processing i strings,
+
+every processed string
+is stored in its correct group.
+
+Recognition Clues:
+
+"Group equivalent strings"
+
+"Ignore order"
+
+"Same frequency"
+
+"Group by identity"
+
+↓
+
+Think:
+
+Canonical Representation
+
+Complexity:
+
+Frequency Signature:
+Time:
+O(n × k)
+
+Space:
+O(n × k)
+
+Sorted String:
+Time:
+O(n × k log k)
+
+Common Mistakes:
+
+❌ Using original string as key
+
+❌ Using int[] directly as key
+
+❌ Forgetting separators in frequency signature
+
+❌ Building keys with String concatenation
+
+Optimization Rules:
+
+Unknown equivalence
+↓
+
+Find a canonical representation.
+
+Fixed alphabet
+↓
+
+Frequency signature beats sorting.
+
+Template:
+
+HashMap<Key, List<String>>
+
+For each string:
+
+    Build canonical key.
+
+    map.computeIfAbsent(key, ...)
+       .add(string)
+
+Return all map values.

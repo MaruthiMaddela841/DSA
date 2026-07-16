@@ -1,0 +1,41 @@
+=========================================
+DSA Principle: Process the Summary
+=========================================
+
+Instead of repeatedly looking at the original input,
+build a summary that contains all the information
+needed for future decisions.
+
+Examples:
+
+Valid Anagram
+Summary:
+Frequency Array
+
+Jewels and Stones
+Summary:
+HashSet / boolean[]
+
+Balanced String
+Summary:
+Single balance variable
+
+Longest Common Prefix
+Summary:
+Current matching column
+
+Valid Palindrome
+Summary:
+Current left/right pointers
+
+Isomorphic Strings
+Summary:
+Bidirectional Mapping Tables
+
+Interview Question:
+
+"What is the smallest summary that preserves
+all information needed to solve the problem?"
+
+The smaller the summary,
+the simpler and faster the algorithm.

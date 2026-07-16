@@ -1,0 +1,86 @@
+=========================================
+Pattern: S6.2 - Reverse Parsing
+=========================================
+
+Recognition:
+- Reverse words, not characters
+- Ignore extra delimiters
+- Extract tokens from right to left
+
+Core Idea:
+
+Scan from the end.
+
+Skip delimiters.
+
+Identify one complete word.
+
+Append it.
+
+Repeat.
+
+Algorithm:
+
+i = last index
+
+while (i >= 0)
+
+    Skip spaces
+
+    if no characters left
+        break
+
+    end = i
+
+    Move left until space
+
+    if result not empty
+        append one space
+
+    Append substring(i + 1, end + 1)
+
+Loop Invariant:
+
+After processing from the end to index i,
+
+the result already contains all processed
+words in their final order.
+
+Complexity:
+
+Time:
+O(n)
+
+Space:
+O(n)
+
+Recognition Clues:
+
+"Reverse words"
+
+"Ignore extra spaces"
+
+"Keep words intact"
+
+↓
+
+Think:
+Reverse Parsing
+
+Common Mistakes:
+
+❌ Reversing characters instead of words
+
+❌ Using split() immediately
+
+❌ Forgetting multiple spaces
+
+❌ Forgetting leading/trailing spaces
+
+❌ Using a for-loop when pointer movement is irregular
+
+Golden Rule:
+
+When YOU control pointer movement,
+
+prefer while over for.

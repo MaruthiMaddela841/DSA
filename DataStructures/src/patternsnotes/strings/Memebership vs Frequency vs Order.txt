@@ -1,0 +1,79 @@
+==============================
+Pattern Recognition Cheat Sheet
+==============================
+
+1. Membership Questions
+Ask:
+- Does it exist?
+- Is this character present?
+- Is this value contained?
+
+Use:
+- HashSet
+- boolean[]
+
+Examples:
+- Jewels and Stones
+- Contains Duplicate
+
+--------------------------------
+
+2. Frequency Questions
+Ask:
+- How many times does it appear?
+- Count occurrences
+- Compare counts
+
+Use:
+- HashMap (unknown/large domain)
+- int[] (fixed small domain)
+
+Examples:
+- Valid Anagram
+- Most Frequent Character
+- Find Most Frequent Vowel/Consonant
+
+--------------------------------
+
+3. Order Questions
+Ask:
+- Does sequence matter?
+- Compare positions
+- Prefix/Suffix
+- Palindrome
+- Window
+
+Use:
+- Character Traversal
+- Two Pointers
+- Sliding Window
+
+Examples:
+- Valid Palindrome
+- Longest Common Prefix
+- Longest Substring Without Repeating Characters
+
+--------------------------------
+
+Golden Rule
+
+Membership:
+"Does it exist?"
+
+↓
+
+HashSet / boolean[]
+
+Frequency:
+"How many?"
+
+↓
+
+HashMap / int[]
+
+Order:
+"In what sequence?"
+
+↓
+
+Traversal / Two Pointers / Sliding Window

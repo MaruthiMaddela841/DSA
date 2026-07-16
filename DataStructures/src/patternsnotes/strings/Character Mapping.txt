@@ -1,0 +1,96 @@
+=========================================
+Pattern: S1.3 - Character Mapping
+=========================================
+
+Recognition:
+- Two strings
+- Characters map to other characters
+- Order matters
+- One-to-one relationship required
+
+Ask Yourself:
+
+Am I counting?
+→ No
+
+Am I checking existence?
+→ No
+
+Am I preserving mappings?
+→ Yes
+
+Core Idea:
+
+Every source character
+must always map to the SAME target character.
+
+Every target character
+must belong to ONLY ONE source character.
+
+This is a BIJECTION.
+
+Implementations:
+
+General Character Set:
+- HashMap<Character, Character>
+- HashMap<Character, Character>
+
+Fixed Character Set (ASCII):
+- char[] mapST = new char[256]
+- char[] mapTS = new char[256]
+
+Loop Invariant:
+
+After processing i characters,
+
+mapST stores:
+source → target
+
+mapTS stores:
+target → source
+
+Both mappings are consistent.
+
+Recognition Clues:
+
+"Character replacement"
+
+"Character mapping"
+
+"Pattern matching"
+
+"One-to-one"
+
+↓
+
+Think:
+Bidirectional Mapping
+
+Complexity:
+
+HashMap Version:
+Time: O(n)
+Space: O(k)
+
+Array Version:
+Time: O(n)
+Space: O(1)
+
+Common Mistakes:
+
+❌ Only checking source → target
+
+❌ Forgetting two different characters
+cannot map to the same target
+
+Optimization Rule:
+
+Unknown domain
+↓
+
+HashMap
+
+Fixed small domain
+↓
+
+Arrays

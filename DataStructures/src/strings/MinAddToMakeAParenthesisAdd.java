@@ -1,0 +1,23 @@
+package strings;
+
+// https://leetcode.com/problems/minimum-add-to-make-parentheses-valid/
+public class MinAddToMakeAParenthesisAdd {
+
+	public int minAddToMakeValid(String s) {
+        int open=0;
+        int close=0;
+        for(int i=0;i<s.length();i++){
+            if(s.charAt(i)=='('){
+                open++;
+            }else{
+                if(open>0){
+                    open--;
+                }else{
+                    close++;
+                }
+            }
+        }
+        return open+close;
+    }
+	
+}

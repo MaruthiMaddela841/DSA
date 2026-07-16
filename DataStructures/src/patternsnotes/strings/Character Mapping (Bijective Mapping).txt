@@ -1,0 +1,94 @@
+=========================================
+Pattern: S1.3 - Character Mapping (Bijective Mapping)
+=========================================
+
+Recognition:
+- Two strings
+- Preserve character relationships
+- Order matters
+- Characters map to other characters
+- One-to-one mapping required
+
+Ask Yourself:
+
+Am I counting characters?
+→ No
+
+Am I checking existence?
+→ No
+
+Am I preserving mappings?
+→ Yes
+
+Core Idea:
+
+Every source character
+must always map to the same target character.
+
+AND
+
+No two source characters
+may map to the same target character.
+
+This is called a BIJECTION.
+
+Need:
+
+Forward Mapping:
+s → t
+
+Backward Mapping:
+t → s
+
+Loop Invariant:
+
+After processing i characters,
+
+every mapping established so far
+is consistent in both directions.
+
+Recognition Clues:
+
+"Replace characters"
+
+"Character mapping"
+
+"One-to-one relationship"
+
+"Pattern matching"
+
+↓
+
+Think:
+Two HashMaps
+(or HashMap + HashSet)
+
+Complexity:
+
+Time:
+O(n)
+
+Space:
+O(1) for fixed character set
+O(k) in general,
+where k = distinct characters
+
+Common Mistakes:
+
+❌ Only checking s → t
+
+❌ Forgetting that
+two characters cannot map
+to the same target
+
+Template:
+
+For every position:
+
+If mapping exists
+    verify consistency
+
+Else
+    create mapping
+
+Repeat in both directions.

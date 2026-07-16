@@ -1,0 +1,73 @@
+==============================
+PATTERN: S1.2 - Vertical Traversal
+==============================
+
+Recognition:
+- Multiple strings
+- Compare characters at the same index
+- Find common prefix/alignment
+- Think in columns instead of rows
+
+Visualization:
+
+flower
+flow
+flight
+
+↓
+
+Column 0 : f f f ✅
+Column 1 : l l l ✅
+Column 2 : o o i ❌
+
+Stop immediately at first mismatch.
+
+Core Idea:
+- Use the first string as the reference.
+- Traverse one column at a time.
+- Compare the current character with every other string.
+- If any string ends or mismatches, return the prefix up to the current column.
+- If all columns match, return the first string.
+
+Loop Invariant:
+- Every column before the current column matches across all strings.
+
+Greedy Insight:
+- Once a mismatch occurs at column i,
+  no longer prefix can ever be common.
+
+Variables:
+- i → current column
+- j → current string
+- reference character = strs[0].charAt(i)
+
+Stopping Conditions:
+1. Current string length <= current column
+2. Character mismatch
+
+Complexity:
+Worst Case:
+- Time: O(m × n)
+  m = number of strings
+  n = number of columns checked
+
+Best Case:
+- Time: O(m)
+  (Mismatch at first column)
+
+Space:
+- O(1)
+
+Template:
+
+for each column i
+    reference = firstString[i]
+
+    for every string
+        if string ended
+            return prefix
+
+        if character mismatch
+            return prefix
+
+return first string
