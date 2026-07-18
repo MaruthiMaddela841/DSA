@@ -1,0 +1,121 @@
+=========================================
+Pattern: Sequence Generation
+          +
+Consecutive Group Processing
+=========================================
+
+Recognition:
+
+Each answer depends on the previous answer.
+
+Generate the sequence one step at a time.
+
+For each step:
+
+Process consecutive groups.
+
+--------------------------------
+
+Outer Algorithm:
+
+current = "1"
+
+Repeat (n - 1) times:
+
+    current = buildNext(current)
+
+Return current
+
+--------------------------------
+
+buildNext():
+
+Maintain:
+
+currentGroupChar
+
+count
+
+StringBuilder answer
+
+For every character:
+
+    Same group
+        ↓
+    count++
+
+    Different group
+        ↓
+    Append count
+
+    Append character
+
+    Start new group
+
+After loop:
+
+Append final group.
+
+--------------------------------
+
+Loop Invariants:
+
+Outer Loop:
+
+current stores the sequence
+generated so far.
+
+Inner Loop:
+
+currentGroupChar stores the
+current group.
+
+count stores the group's size.
+
+answer stores all completed groups.
+
+--------------------------------
+
+Recognition Clues:
+
+Sequence generated from previous answer
+
+Repeated transformation
+
+Consecutive groups
+
+Run-Length Encoding
+
+↓
+
+Think:
+
+Sequence Generation
+
++
+
+Group Processing
+
+--------------------------------
+
+Complexity:
+
+Time:
+
+O(total characters generated)
+
+Space:
+
+O(final output length)
+
+--------------------------------
+
+Golden Rules:
+
+1. Every term comes from the previous term.
+
+2. Don't count total frequency.
+
+Count consecutive groups.
+
+3. Never forget the final group.

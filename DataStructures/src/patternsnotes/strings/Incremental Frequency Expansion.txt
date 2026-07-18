@@ -1,0 +1,99 @@
+=========================================
+Pattern: Incremental Frequency Expansion
+=========================================
+
+Recognition:
+
+Need an answer for every growing substring.
+
+Core Idea:
+
+Fix the left boundary.
+
+Grow the right boundary one character
+at a time.
+
+Maintain the frequency array
+incrementally.
+
+Every extension creates a NEW substring.
+
+↓
+
+Update one frequency.
+
+↓
+
+Compute answer immediately.
+
+Algorithm:
+
+for every left
+
+    freq = new int[26]
+
+    for every right
+
+        freq[currentChar]++
+
+        compute max frequency
+
+        compute min frequency
+        (ignore zeros)
+
+        answer += max - min
+
+Loop Invariant:
+
+After processing right,
+
+freq[] stores the exact frequencies
+of substring s[left...right].
+
+Recognition Clues:
+
+"Every substring"
+
+"Frequency"
+
+"Growing substring"
+
+↓
+
+Think:
+
+Incremental Frequency Summary
+
+Complexity:
+
+Time:
+O(n²)
+
+Space:
+O(1)
+
+Common Mistakes:
+
+❌ Rebuilding frequency array for every substring
+
+❌ Including zero frequencies in minimum
+
+❌ Computing beauty only once per left
+
+❌ Using HashMap instead of int[26]
+
+Golden Rule:
+
+Growing substring
+
+↓
+
+Update ONE frequency
+
+↓
+
+Compute answer immediately
+
+↓
+
+Never rebuild the summary.

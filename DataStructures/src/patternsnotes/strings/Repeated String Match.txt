@@ -1,0 +1,29 @@
+Problem: Repeated String Match
+
+Pattern:
+String Matching + Mathematical Observation
+
+Recognition:
+Need the minimum number of repeats so that repeatedA.length >= b.length.
+
+Formula:
+minRepeats = (lenB + lenA - 1) / lenA
+
+Key Insight:
+Only check:
+
+1. minRepeats
+2. minRepeats + 1
+
+Reason:
+If b doesn't fit after one extra overlap across the boundary,
+it will never fit.
+
+Algorithm:
+
+1. Compute minRepeats.
+2. Repeat a minRepeats times.
+3. If contains(b), return minRepeats.
+4. Append one more a.
+5. If contains(b), return minRepeats + 1.
+6. Otherwise return -1.

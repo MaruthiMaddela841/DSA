@@ -1,0 +1,116 @@
+=========================================
+Pattern: Nested State Restoration
+=========================================
+
+Recognition:
+
+Nested brackets
+
+Need to return to previous state
+
+Need unfinished outer expression
+
+↓
+
+Think:
+
+Stack
+
+State to Save:
+
+1. Repeat count
+
+2. Previously built string
+
+Algorithm:
+
+Digit
+↓
+
+number = number * 10 + digit
+
+--------------------------------
+
+Letter
+↓
+
+Append to current string
+
+--------------------------------
+
+'['
+↓
+
+Push current string
+
+Push repeat count
+
+Reset current string
+
+Reset number
+
+--------------------------------
+
+']'
+↓
+
+Pop repeat count
+
+Pop previous string
+
+Repeat current string
+
+Append to previous string
+
+Current = merged string
+
+Loop Invariant:
+
+After processing character i,
+
+current stores the decoded string
+for the current nesting level.
+
+Stacks store every unfinished
+outer nesting level.
+
+Recognition Clues:
+
+Nested structures
+
+Need previous unfinished state
+
+Need LIFO restoration
+
+↓
+
+Think:
+
+Stack
+
+Complexity:
+
+Time:
+O(n + decodedLength)
+
+Space:
+O(n + decodedLength)
+
+Common Mistakes:
+
+❌ Forgetting multi-digit numbers
+
+❌ Not resetting number after '['
+
+❌ Overwriting previous string
+
+❌ Forgetting to append repeated string
+to previous string
+
+Golden Rule:
+
+Need to restore previous unfinished state
+
+↓
+
+Use Stack
