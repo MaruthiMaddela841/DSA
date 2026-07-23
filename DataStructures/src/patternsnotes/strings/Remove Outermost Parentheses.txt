@@ -1,0 +1,31 @@
+Problem:
+Remove Outermost Parentheses
+
+Pattern:
+Parentheses + Nesting Depth (Counter)
+
+Recognition:
+Need to remove only the first '(' and last ')' of every primitive.
+We don't need to remember the exact opening parentheses—only the current nesting depth.
+
+Core Idea:
+Maintain a depth counter.
+
+For '(':
+- If depth > 0, append '('.
+- Increase depth.
+
+For ')':
+- Decrease depth.
+- If depth > 0, append ')'.
+
+Time Complexity:
+O(n)
+
+Space Complexity:
+O(n)  // output StringBuilder
+
+Interview Insight:
+Before choosing a stack, ask:
+"Do I need to remember every element, or only the current state?"
+If only the current nesting level matters, a counter is enough.

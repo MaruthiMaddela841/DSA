@@ -1,0 +1,24 @@
+MULTI-SOURCE BFS
+
+Use when:
+- Multiple starting points spread simultaneously.
+- Need minimum time/steps.
+- Spread happens level by level.
+
+Algorithm:
+1. Add ALL sources to queue.
+2. Count targets (fresh oranges).
+3. While queue not empty:
+      size = queue.size()
+      Process exactly 'size' nodes.
+      Explore 4 directions.
+      If valid & fresh:
+          Mark visited immediately.
+          Add to queue.
+          Decrease fresh.
+4. One BFS level = One minute.
+5. If fresh reaches 0 → return minutes.
+6. Otherwise return -1.
+
+Time: O(R × C)
+Space: O(R × C)

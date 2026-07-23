@@ -1,0 +1,45 @@
+Problem:
+Next Greater Element I
+
+Pattern:
+Monotonic Decreasing Stack + HashMap
+
+Recognition:
+Need the first greater element on the RIGHT for every element.
+
+Key Observation:
+When a larger number arrives, it immediately becomes the answer for
+all smaller elements waiting on top of the stack.
+
+Invariant:
+Stack is monotonically decreasing (bottom → top).
+
+Algorithm:
+For each number n in nums2:
+    while stack is not empty AND stack.top < n:
+        map[stack.pop()] = n
+    stack.push(n)
+
+For nums1:
+    answer[i] = map.getOrDefault(nums1[i], -1)
+
+Why O(n)?
+Every element is pushed exactly once and popped exactly once.
+Total stack operations = 2n.
+This is amortized O(n).
+
+Time Complexity:
+O(n + m)
+
+Space Complexity:
+O(n)
+
+Interview Trigger:
+If the problem asks for:
+- Next Greater
+- Next Smaller
+- Previous Greater
+- Previous Smaller
+
+and elements are "waiting" for the first qualifying element,
+think Monotonic Stack.

@@ -1,0 +1,44 @@
+Problem:
+Min Stack
+
+Pattern:
+Data Structure Augmentation
+
+Recognition:
+Need getMin() in O(1).
+A normal stack loses the previous minimum when the current minimum is removed.
+
+Core Idea:
+Maintain two stacks:
+1. Main stack stores all values.
+2. Min stack stores every new minimum (including duplicates).
+
+Push:
+- Push into main.
+- If min is empty OR value <= current minimum:
+    Push into min.
+
+Pop:
+- Remove value from main.
+- If removed value equals current minimum:
+    Remove from min.
+
+Top:
+Return main.peek()
+
+GetMin:
+Return min.peek()
+
+Time Complexity:
+push()   O(1)
+pop()    O(1)
+top()    O(1)
+getMin() O(1)
+
+Space Complexity:
+O(n)
+
+Interview Insight:
+Whenever removing an element causes information to disappear, think:
+"Can I store that information alongside the data?"
+That's Data Structure Augmentation.

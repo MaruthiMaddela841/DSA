@@ -1,0 +1,43 @@
+Problem:
+Daily Temperatures
+
+Pattern:
+Monotonic Decreasing Stack (stores indices)
+
+Recognition:
+Need the first warmer temperature on the RIGHT.
+
+Key Observation:
+When a warmer day arrives, it immediately answers all colder days
+waiting on the top of the stack.
+
+Invariant:
+Stack stores indices whose temperatures are in decreasing order
+(bottom → top).
+
+Algorithm:
+For each index i:
+    while stack is not empty AND
+          temperatures[stack.top] < temperatures[i]:
+
+        j = stack.pop()
+        ans[j] = i - j
+
+    stack.push(i)
+
+Time Complexity:
+O(n)
+
+Space Complexity:
+O(n)
+
+Interview Trigger:
+If the problem asks:
+- Next Greater
+- Next Smaller
+- Warmer
+- Colder
+- First larger/smaller to the left/right
+
+and multiple previous elements are "waiting" for a future answer,
+think Monotonic Stack.
