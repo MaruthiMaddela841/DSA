@@ -1,0 +1,20 @@
+PATTERN: Binary Search - Find Last Valid Answer
+
+Use when:
+- The answer space is monotonic.
+- Need the largest value satisfying a condition.
+
+Algorithm:
+1. Binary search on the answer space.
+2. If condition is true:
+      Save current answer.
+      Search right for a better one.
+3. If condition is false:
+      Search left.
+4. Return the last saved valid answer.
+
+Loop Invariant:
+lastValid always stores the largest valid answer found so far.
+
+Time: O(log n)
+Space: O(1)

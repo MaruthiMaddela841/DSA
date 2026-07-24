@@ -1,0 +1,39 @@
+PATTERN:
+Find First True / Boundary Search
+
+WHEN TO USE:
+The answer changes from False → True.
+
+Example:
+
+False False False True True True
+
+Goal:
+Find the first True.
+
+TEMPLATE:
+
+left = minimum possible answer
+right = maximum possible answer
+
+while(left < right){
+
+    mid = left + (right-left)/2;
+
+    if(condition(mid)){
+        right = mid;      // keep mid
+    }else{
+        left = mid + 1;   // discard mid
+    }
+}
+
+return left;
+
+LOOP INVARIANT:
+The answer always lies within [left, right].
+
+TIME:
+O(log n)
+
+SPACE:
+O(1)
